@@ -76,7 +76,8 @@ jobs:
           branch: gh-pages
           folder: allure-report
           clean: true
-          token: ${{ secrets.GITHUB_TOKEN }} 
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target-folder: allure-history/${{ env.REPORT_TIMESTAMP }}
 
       - name: Upload Allure Report as Artifact
         if: always()
