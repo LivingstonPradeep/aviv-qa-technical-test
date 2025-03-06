@@ -35,3 +35,7 @@ pnpm-debug.log*
 
 # Vite
 .vite/
+
+# Playwright
+reports/
+allure-results/
