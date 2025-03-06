@@ -1,57 +1,57 @@
 tests:
-- description: "UI-Profile-Edit-Personal-User"
+- description: "@regression-UI-Profile-Edit-Personal-User"
   username: "test@example.com"
   password: "Test123!"
   newName: "New John Doe"
   newEmail: "newemail@test.com"
   role: "user"
   mode: "ui"
-  mustFail: false
+  negative: false
 
-- description: "UI-Profile-Edit-Personal-Agent"
+- description: "@regression-UI-Profile-Edit-Personal-Agent"
   username: "agent@example.com"
   password: "Test123!"
   newName: "New Agent Doe"
   newEmail: "newagentemail@test.com"
   role: "agent"
   mode: "ui"
-  mustFail: false
+  negative: false
 
-- description: "UI-Profile-Edit-Personal-Admin"
+- description: "@regression-UI-Profile-Edit-Personal-Admin-negative"
   username: "admin@example.com"
   password: "Test123!"
   newName: "New Admin Doe"
   newEmail: "newadminemail@test.com"
   role: "admin"
   mode: "ui"
-  mustFail: true
+  negative: true
 
-- description: "UI-Profile-Edit-Password-User"
+- description: "@regression-UI-Profile-Edit-Password-User-negative"
   username: "test@example.com"
   password: "Test123!"
   newPassword: "Test00110!"
   role: "user"
   mode: "ui"
-  mustFail: true
-  notes: "The change password feature is not ready yet so test fails for now"
+  negative: true
+  comments: "The change password feature is not ready yet so test fails for now"
   errorMessages: [ "Failed with Invalid Credentials" ]
 
-- description: "UI-Profile-Edit-Password-Agent"
+- description: "@regression-UI-Profile-Edit-Password-Agent-negative"
   username: "agent@example.com"
   password: "Test123!"
   newPassword: "Test00110!"
   role: "agent"
   mode: "ui"
-  mustFail: true
-  notes: "The change password feature is not ready yet so test fails for now"
+  negative: true
+  comments: "The change password feature is not ready yet so test fails for now"
   errorMessages: [ "Failed with Invalid Credentials" ]
 
-- description: "UI-Profile-Edit-Password-Admin"
+- description: "@regression-UI-Profile-Edit-Password-Admin-negative"
   username: "admin@example.com"
   password: "Test123!"
   newPassword: "Test00110!"
   role: "admin"
   mode: "ui"
-  mustFail: true
-  notes: "The change password feature is not ready yet so test fails for now"
+  negative: true
+  comments: "The change password feature is not ready yet so test fails for now"
   errorMessages: [ "Failed with Invalid Credentials" ]

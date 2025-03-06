@@ -141,10 +141,12 @@ export class UsersAction {
   async verifyRegisterErrorMessages(errorMessages: string[]) {
     let errorMsgDiff = this.registerPage.visibleErrors.filter(item => !errorMessages.includes(item));
     if (errorMsgDiff.length) {
+      console.debug("Negative Test failed. The following expected error messages were missing :" + errorMsgDiff)
       throw new Error("The following expected error messages were missing :" + errorMsgDiff);
     }
     errorMsgDiff = errorMessages.filter(item => !this.registerPage.visibleErrors.includes(item));
     if (errorMsgDiff.length) {
+      console.debug("Negative Test failed. The following unexpected error messages were found :" + errorMsgDiff)
       throw new Error("The following unexpected error messages were found :" + errorMsgDiff);
     }
   }

@@ -38,4 +38,3 @@ pnpm-debug.log*
 
 # Playwright
 reports/
-allure-results/

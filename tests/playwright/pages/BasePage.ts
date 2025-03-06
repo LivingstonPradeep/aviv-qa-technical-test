@@ -1,5 +1,4 @@
 import { Page, Locator, expect } from "@playwright/test";
-import { Roles } from "../../data/constants";
 
 export class BasePage {
   protected page: Page;

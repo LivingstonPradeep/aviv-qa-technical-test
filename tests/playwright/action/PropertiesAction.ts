@@ -1,14 +1,4 @@
 import { Page, APIRequestContext, expect } from "@playwright/test";
-import { LoginPage } from "../pages/LoginPage";
-import { UserAPI } from "../api/UserAPI";
-import { DashboardBasePage } from "../pages/DashboardBasePage";
-import { UserDashboardPage } from "../pages/UserDashboardPage";
-import { AdminDashboardPage } from "../pages/AdminDashboardPage";
-import { AgentDashboardPage } from "../pages/AgentDashboardPage";
-import assert, { throws } from "assert";
-import { RegisterPage } from "../pages/RegisterPage";
-import { error } from "console";
-import { SettingsPage } from "../pages/SettingsPage";
 import { PropertiesPage } from "../pages/PropertiesPage";
 import { HomePage } from "../pages/HomePage";
 

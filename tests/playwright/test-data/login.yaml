@@ -1,29 +1,38 @@
 tests:
-- description: "UI-Login-User"
+- description: "@regression-@critical-UI-Login-User"
   username: "test@example.com"
   password: "Test123!"
   role: "user"
   mode: "ui"
-  mustFail: false
+  negative: false
 
-- description: "UI-Login-Agent"
+- description: "@regression-@priority-UI-Login-Agent"
   username: "agent@example.com"
   password: "Test123!"
   role: "agent"
   mode: "ui"
-  mustFail: false
+  negative: false
 
-- description: "UI-Login-Admin"
+- description: "@regression-@priority-UI-Login-Admin"
   username: "admin@example.com"
   password: "Test123!"
   role: "admin"
   mode: "ui"
-  mustFail: false
+  negative: false
 
-- description: "UI-Login-Admin-Fail"
+- description: "@regression-UI-Login-Admin-Negative"
   username: "someadmin@example.com"
   password: "Test123!"
   role: "admin"
   mode: "ui"
-  mustFail: true
-  errorMessage: "Failed with Invalid Credentials"
+  negative: true
+  errorMessages: [ "Failed with Invalid Credentials" ]
+  comments: "Note that this negative test will verify only one expected error message and not multiple errors"
+
+- description: "@regression-@fail-UI-Login-Admin-Fail"
+  username: "someadmin@example.com"
+  password: "Test123!!"
+  role: "admin"
+  mode: "ui"
+  negative: false
+  comments: "The test will fail, but it is not expected. The allure reports will contain the screenshot and video"

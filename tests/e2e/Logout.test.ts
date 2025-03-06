@@ -1,6 +1,7 @@
 import { UsersAction } from "../playwright/action/UsersAction";
 import { getTestData } from "../playwright/utilities/testData";
 import { test } from "../playwright/fixtures/test-setup";
+import { handleError } from "../playwright/utilities/errorUtils";
 
 const logoutTestData = getTestData("tests/playwright/test-data/logout.yaml");
 
@@ -13,11 +14,7 @@ logoutTestData.tests.forEach((testData) => {
       await userActions.performLogout();
     }
     catch (error) {
-      if (testData.mustFail && "errorMessage" in testData && error.message.includes(testData.errorMessage)) {
-        console.debug('Expected error message:', error.message);
-        return;
-      }
-      throw error;
+      handleError(testData, error);
     }
 
   });

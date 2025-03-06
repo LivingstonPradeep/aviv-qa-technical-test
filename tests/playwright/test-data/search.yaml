@@ -1,5 +1,5 @@
 tests:
-- description: "UI-Property-Page-Search-Filter-User"
+- description: "@critical-UI-Property-Page-Search-Filter-User"
   username: "test@example.com"
   password: "Test123!"
   role: "user"
@@ -10,9 +10,9 @@ tests:
   beds: 2
   type: "sale"
   availablePropertiesCount: 2
-  mustFail: false
+  negative: false
 
-- description: "UI-Home-Page-Search-Filter-User"
+- description: "@priority-UI-Home-Page-Search-Filter-User"
   username: "test@example.com"
   password: "Test123!"
   role: "user"
@@ -24,9 +24,9 @@ tests:
   type: "sale"
   allPropertiesCount: 2
   featuredPropertiesCount: 3
-  mustFail: false
+  negative: false
 
-- description: "UI-Property-Page-Search-Filter-Admin"
+- description: "@critical-UI-Property-Page-Search-Filter-Admin"
   username: "admin@example.com"
   password: "Test123!"
   role: "admin"
@@ -37,7 +37,7 @@ tests:
   beds: 2
   type: "sale"
   availablePropertiesCount: 2
-  mustFail: false
+  negative: false
 
 - description: "UI-Home-Page-Search-Filter-Admin"
   username: "admin@example.com"
@@ -51,7 +51,7 @@ tests:
   type: "sale"
   allPropertiesCount: 2
   featuredPropertiesCount: 3
-  mustFail: false
+  negative: false
 
 - description: "UI-Property-Page-Search-Filter-Agent"
   username: "agent@example.com"
@@ -64,7 +64,7 @@ tests:
   beds: 2
   type: "sale"
   availablePropertiesCount: 2
-  mustFail: false
+  negative: false
 
 - description: "UI-Home-Page-Search-Filter-Agent"
   username: "agent@example.com"
@@ -78,4 +78,4 @@ tests:
   type: "sale"
   allPropertiesCount: 2
   featuredPropertiesCount: 3
-  mustFail: false
+  negative: false
