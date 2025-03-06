@@ -1,0 +1,1 @@
+Negative test succeeded with expected message(s): Failed with Invalid Credentials
