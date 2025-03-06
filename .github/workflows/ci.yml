@@ -52,7 +52,7 @@ jobs:
           fi
 
       - name: Run Playwright Tests
-        run: ${{ env.PLAYWRIGHT_TEST_COMMAND }}
+        run: npx playwright test
         env:
           PLAYWRIGHT_BASE_URL: http://localhost:5173
         continue-on-error: true
