@@ -178,10 +178,12 @@ This will automatically lead you to the reports page.
 
 - The GitHub Actions CI/CD pipeline is designed to **first set up the target application** before running the UI tests.
 - CI/CD pipelines execute tests on GitHub Actions.
-- Test execution is dynamic based on environment variables.
-- Run tests by tags in different environments using:
+- Tests will get triggered automatically for every push or pull request into main repo
+- Test execution is dynamic based on environment variables for manual triggers
+- To run using manual trigger go to Github Actions -> Playwright Test (Workflow) -> Run workflow. 
+- Use the below command for example to override the default Env variable value
   ```sh
-  npx playwright test --grep "@priority" --project=Realestate_Demo
+  npx playwright test --grep "@priority"
   ```
 - Reports are deployed and stored as artifacts for analysis.
 
