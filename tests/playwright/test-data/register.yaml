@@ -8,7 +8,7 @@ tests:
   phone: "1234123412"
   mustFail: false
 
-- description: "UI-Register-Agent"
+- description: "@priority-UI-Register-Agent"
   fullName: "Patrick Stewart"
   email: "patty@example.com"
   password: "Test010!"
@@ -17,7 +17,7 @@ tests:
   phone: "1234123412"
   mustFail: false
 
-- description: "UI-Register-Agent-Fail"
+- description: "@critical-UI-Register-Agent-Fail"
   fullName: "Harrison Ford"
   email: "patty@example.com"
   password: "Test"

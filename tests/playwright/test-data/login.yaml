@@ -1,12 +1,12 @@
 tests:
-- description: "UI-Login-User"
+- description: "@critical-UI-Login-User"
   username: "test@example.com"
   password: "Test123!"
   role: "user"
   mode: "ui"
   mustFail: false
 
-- description: "UI-Login-Agent"
+- description: "@priority-UI-Login-Agent"
   username: "agent@example.com"
   password: "Test123!"
   role: "agent"
