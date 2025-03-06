@@ -6,7 +6,7 @@ tests:
   role: "user"
   mode: "ui"
   phone: "1234123412"
-  mustFail: false
+  negative: false
 
 - description: "@priority-UI-Register-Agent"
   fullName: "Patrick Stewart"
@@ -15,14 +15,14 @@ tests:
   role: "agent"
   mode: "ui"
   phone: "1234123412"
-  mustFail: false
+  negative: false
 
-- description: "@critical-UI-Register-Agent-Fail"
+- description: "@critical-UI-Register-Agent-Negative"
   fullName: "Harrison Ford"
   email: "patty@example.com"
   password: "Test"
   role: "agent"
   mode: "ui"
   phone: "1234"
-  mustFail: true
+  negative: true
   errorMessages: [ "Please enter a valid phone number", "Password must be at least 8 characters" ]

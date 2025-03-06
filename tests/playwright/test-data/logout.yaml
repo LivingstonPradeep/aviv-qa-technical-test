@@ -4,18 +4,18 @@ tests:
   password: "Test123!"
   role: "user"
   mode: "ui"
-  mustFail: false
+  negative: false
 
 - description: "UI-Logout-Agent"
   username: "agent@example.com"
   password: "Test123!"
   role: "agent"
   mode: "ui"
-  mustFail: false
+  negative: false
 
 - description: "UI-Logout-Admin"
   username: "admin@example.com"
   password: "Test123!"
   role: "admin"
   mode: "ui"
-  mustFail: false
+  negative: false

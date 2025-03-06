@@ -10,7 +10,7 @@ tests:
   beds: 2
   type: "sale"
   availablePropertiesCount: 2
-  mustFail: false
+  negative: false
 
 - description: "UI-Home-Page-Search-Filter-User"
   username: "test@example.com"
@@ -24,7 +24,7 @@ tests:
   type: "sale"
   allPropertiesCount: 2
   featuredPropertiesCount: 3
-  mustFail: false
+  negative: false
 
 - description: "UI-Property-Page-Search-Filter-Admin"
   username: "admin@example.com"
@@ -37,7 +37,7 @@ tests:
   beds: 2
   type: "sale"
   availablePropertiesCount: 2
-  mustFail: false
+  negative: false
 
 - description: "UI-Home-Page-Search-Filter-Admin"
   username: "admin@example.com"
@@ -51,7 +51,7 @@ tests:
   type: "sale"
   allPropertiesCount: 2
   featuredPropertiesCount: 3
-  mustFail: false
+  negative: false
 
 - description: "UI-Property-Page-Search-Filter-Agent"
   username: "agent@example.com"
@@ -64,7 +64,7 @@ tests:
   beds: 2
   type: "sale"
   availablePropertiesCount: 2
-  mustFail: false
+  negative: false
 
 - description: "UI-Home-Page-Search-Filter-Agent"
   username: "agent@example.com"
@@ -78,4 +78,4 @@ tests:
   type: "sale"
   allPropertiesCount: 2
   featuredPropertiesCount: 3
-  mustFail: false
+  negative: false

@@ -12,13 +12,12 @@ registerTestData.tests.forEach((testData) => {
       await userActions.verifyRegisterSuccess(testData.role);
     }
     catch (error) {
-      if (testData.mustFail && "errorMessages" in testData) {
+      if (testData.negative && "errorMessages" in testData) {
         userActions.verifyRegisterErrorMessages(testData.errorMessages);
         return;
       }
       throw error;
     }
-
   });
 });
 

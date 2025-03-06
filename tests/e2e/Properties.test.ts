@@ -2,6 +2,7 @@ import { UsersAction } from "../playwright/action/UsersAction";
 import { PropertiesAction } from "../playwright/action/PropertiesAction";
 import { getTestData } from "../playwright/utilities/testData";
 import { test } from "../playwright/fixtures/test-setup";
+import { handleError } from "../playwright/utilities/errorUtils";
 
 const propertiesTestData = getTestData("tests/playwright/test-data/search.yaml");
 
@@ -16,8 +17,8 @@ propertyPageSearchTestData.forEach((testData) => {
       await propertiesAction.searchInProperties(testData);
     }
     catch (error) {
-      if (testData.mustFail && "errorMessages" in testData && error.message.includes(testData.errorMessages)) {
-        console.log('Test failed as expected:', error.message);
+      if (testData.negative && "errorMessages" in testData && error.message.includes(testData.errorMessages)) {
+        console.debug('Expected error message:', error.message);
         return;
       }
       throw error;
@@ -36,11 +37,7 @@ homePageSearchTestData.forEach((testData) => {
       await propertiesAction.searchInHome(testData);
     }
     catch (error) {
-      if (testData.mustFail && "errorMessages" in testData && error.message.includes(testData.errorMessages)) {
-        console.log('Test failed as expected:', error.message);
-        return;
-      }
-      throw error;
+      handleError(testData, error);
     }
 
   });

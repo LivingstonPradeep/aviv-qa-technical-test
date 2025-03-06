@@ -1,6 +1,4 @@
 import { Page, Locator, expect } from "@playwright/test";
-import { Roles } from "../../data/constants";
-import { BasePage } from "./BasePage";
 import { DashboardBasePage } from "./DashboardBasePage";
 
 export class AgentDashboardPage extends DashboardBasePage{
