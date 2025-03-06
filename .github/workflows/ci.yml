@@ -36,7 +36,7 @@ jobs:
           npm install -g allure-commandline --save-dev
 
       - name: Run Playwright Tests
-        run: npx playwright test --reporter=line,allure-playwright
+        run: npx playwright test
         env:
           PLAYWRIGHT_BASE_URL: http://localhost:5173
 
