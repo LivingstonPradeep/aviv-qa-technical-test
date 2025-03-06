@@ -45,7 +45,7 @@ export default defineConfig({
       name: 'Realestate_Demo',
       use: { ...devices['Desktop Chrome'],
         baseURL: process.env.PLAYWRIGHT_BASE_URL || "http://localhost:5173/",
-        headless: false,
+        headless: true,
         screenshot: 'only-on-failure',
         video: 'retain-on-failure',
        },
