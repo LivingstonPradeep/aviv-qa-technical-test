@@ -40,16 +40,21 @@ jobs:
         env:
           PLAYWRIGHT_BASE_URL: http://localhost:5173
 
+      - name: Check Allure Results
+        run: ls -R reports/allure-results
+
       - name: Generate Allure Report
-        run: |
-          allure generate reports/allure-results --clean -o allure-report
+        run: allure generate reports/allure-results --clean -o allure-report
+      
+      - name: Check Allure Report
+        run: ls -R allure-report
 
       - name: Deploy Allure Report to GitHub Pages
         if: success() || failure()
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: allure-report 
+          folder: allure-report
           clean: true
           token: ${{ secrets.GITHUB_TOKEN }} 
 
