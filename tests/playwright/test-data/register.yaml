@@ -1,5 +1,5 @@
 tests:
-- description: "UI-Register-User"
+- description: "@regression-UI-Register-User"
   fullName: "Leonard Nemoy"
   email: "lenny@example.com"
   password: "Test321!"
@@ -8,7 +8,7 @@ tests:
   phone: "1234123412"
   negative: false
 
-- description: "@priority-UI-Register-Agent"
+- description: "@regression-@priority-UI-Register-Agent"
   fullName: "Patrick Stewart"
   email: "patty@example.com"
   password: "Test010!"
@@ -17,7 +17,7 @@ tests:
   phone: "1234123412"
   negative: false
 
-- description: "@critical-UI-Register-Agent-Negative"
+- description: "@regression-@critical-UI-Register-Agent-Negative"
   fullName: "Harrison Ford"
   email: "patty@example.com"
   password: "Test"

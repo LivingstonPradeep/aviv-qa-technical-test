@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch: 
+    inputs:
+      test_command:
+        description: "Specify Playwright test command (default: all tests)"
+        required: false
+        default: "npx playwright test"
+        type: string
 
 jobs:
   test:
@@ -34,9 +40,19 @@ jobs:
           ls -lah  # List all files to confirm we're in the right repo
           npx playwright install chromium
           npm install -g allure-commandline --save-dev
+      
+      - name: Set Playwright Test Command
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Using manual input command: ${{ inputs.test_command }}"
+            echo "PLAYWRIGHT_TEST_COMMAND=${{ inputs.test_command }}" >> $GITHUB_ENV
+          else
+            echo "Running all tests as this is a push or PR"
+            echo "PLAYWRIGHT_TEST_COMMAND=npx playwright test" >> $GITHUB_ENV
+          fi
 
       - name: Run Playwright Tests
-        run: npx playwright test
+        run: ${{ env.PLAYWRIGHT_TEST_COMMAND }}
         env:
           PLAYWRIGHT_BASE_URL: http://localhost:5173
         continue-on-error: true

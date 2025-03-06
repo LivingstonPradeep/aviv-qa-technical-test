@@ -1,5 +1,5 @@
 tests:
-- description: "UI-Property-Page-Search-Filter-User"
+- description: "@critical-UI-Property-Page-Search-Filter-User"
   username: "test@example.com"
   password: "Test123!"
   role: "user"
@@ -12,7 +12,7 @@ tests:
   availablePropertiesCount: 2
   negative: false
 
-- description: "UI-Home-Page-Search-Filter-User"
+- description: "@priority-UI-Home-Page-Search-Filter-User"
   username: "test@example.com"
   password: "Test123!"
   role: "user"
@@ -26,7 +26,7 @@ tests:
   featuredPropertiesCount: 3
   negative: false
 
-- description: "UI-Property-Page-Search-Filter-Admin"
+- description: "@critical-UI-Property-Page-Search-Filter-Admin"
   username: "admin@example.com"
   password: "Test123!"
   role: "admin"
