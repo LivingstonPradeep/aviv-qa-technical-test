@@ -30,6 +30,7 @@ Playwright e2e Test Automation Framework for AVIV is a **TypeScript-based Hybrid
 #### Data-Driven Testing
 
 - Externalized test data is stored in YAML files for scalability and ease of maintenance.
+- There is no restriction to where the test data files are placed but its recommended to be placed inside `tests/playwright/test-data/` directory.
 - Tests are parameterized to run with multiple data sets.
 - Maintains a clear separation between test data and test logic.
 - Includes both positive and negative test scenarios to ensure robustness.
@@ -58,6 +59,11 @@ tests:
 
 Negative test scenarios are expected to throw exceptions. The test execution will verify if the expected error messages are present in the application response.
 
+#### Action Layer
+- The Action Layer implements an abstraction layer to improve test reusability and maintainability.
+- The Action Layer can also be used to implement polymorphism by accomplishing the task by either UI or API based on the input
+- Action Layer helps keep the test simple and clean
+Note: The API actions are not implemented/covered yet.
 
 ##### Reading and Using Test Data in Tests:
 ```typescript
@@ -84,25 +90,21 @@ propertyPageSearchTestData.forEach((testData) => {
 - **Property Management**:
   - Property listing and search functionality.
   - Validation of property details and booking process.
-
-### Coverage Requirements
-
-- Ensures a minimum **80% test coverage** for critical paths.
-- Covers all user roles (Admin, Agent, User) to validate different access levels and permissions.
-
+  
 ### Running Tests
 
 #### Prerequisites
 
 - Node.js installed (latest LTS version recommended).
 - Playwright installed via npm:
-  ```sh
-  npm install @playwright/test
-  ```
+
+```sh
+npm install @playwright/test
+```
 - Dependencies installed via npm:
-  ```sh
-  npm install
-  ```
+```sh
+npm install
+```
 
 #### Configuring Test Execution
 
@@ -140,10 +142,22 @@ And then run them using the commands like the ones below
 
 ##### Running Tests in Multiple Browsers
 
-Execute tests in all defined browsers:
-```sh
-npx playwright test --project=Realestate_Demo
+Execute tests in different browsers by adding entries for each browser in the Projects section of `playwright.config.ts`.
+For example, if I need to add Firefox support I would have to add 
+```typescript
+{
+      name: 'Realestate_Demo_Firefox',
+      use: { 
+        ...devices['Desktop Firefox'],
+        baseURL: process.env.PLAYWRIGHT_BASE_URL || "http://localhost:5173/",
+        headless: true,
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
+      },
+    }
 ```
+Note: Playwright Firefox dependency must be installed for this to work `npx playwright install firefox`
+
 
 ##### Increasing Workers
 
@@ -178,22 +192,17 @@ This will automatically lead you to the reports page.
 
 - The GitHub Actions CI/CD pipeline is designed to **first set up the target application** before running the UI tests.
 - CI/CD pipelines execute tests on GitHub Actions.
+- Before the tests are triggered the AVIV demo application will be setup and run
 - Tests will get triggered automatically for every push or pull request into main repo
 - Test execution is dynamic based on environment variables for manual triggers
 - To run using manual trigger go to Github Actions -> Playwright Test (Workflow) -> Run workflow. 
 - Use the below command for example to override the default Env variable value
-  ```sh
-  npx playwright test --grep "@priority"
-  ```
+```sh
+npx playwright test --grep "@priority"
+```
 - Reports are deployed and stored as artifacts for analysis.
+- To view the test (allure) results check out the github pages links (https://livingstonpradeep.github.io/aviv-qa-technical-test/#)
 
-- CI/CD pipelines execute tests on GitHub Actions.
-- Test execution is dynamic based on environment variables.
-- Run tests by tags in different environments using:
-  ```sh
-  npx playwright test --grep "@priority" --project=Realestate_Demo
-  ```
-- Reports are deployed and stored as artifacts for analysis.
 
 ### Contribution Guidelines
 
