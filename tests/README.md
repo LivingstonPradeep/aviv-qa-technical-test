@@ -90,13 +90,14 @@ propertyPageSearchTestData.forEach((testData) => {
 - **Property Management**:
   - Property listing and search functionality.
   - Validation of property details and booking process.
-
+  
 ### Running Tests
 
 #### Prerequisites
 
 - Node.js installed (latest LTS version recommended).
 - Playwright installed via npm:
+
 ```sh
 npm install @playwright/test
 ```
