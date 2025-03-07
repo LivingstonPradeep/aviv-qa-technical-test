@@ -63,6 +63,7 @@ Negative test scenarios are expected to throw exceptions. The test execution wil
 - The Action Layer implements an abstraction layer to improve test reusability and maintainability.
 - The Action Layer can also be used to implement polymorphism by accomplishing the task by either UI or API based on the input
 - Action Layer helps keep the test simple and clean
+Note: The API actions are not implemented/covered yet.
 
 ##### Reading and Using Test Data in Tests:
 ```typescript
